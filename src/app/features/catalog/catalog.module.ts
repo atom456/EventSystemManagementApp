@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CatalogPageComponent } from './pages/catalog-page/catalog-page.component';
 import { CatalogRoutingModule } from './catalog-routing.module';
+import { EventCardComponent } from './components/event-card/event-card.component';
+import { EventListComponent } from './components/event-list/event-list.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [CatalogPageComponent],
-  imports: [CommonModule, CatalogRoutingModule],
+  declarations: [CatalogPageComponent, EventCardComponent, EventListComponent],
+  imports: [CommonModule, CatalogRoutingModule, SharedModule],
 })
 export class CatalogModule {}

@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  baseUrl: 'assets',
+  baseUrl: 'assets/data',
 };

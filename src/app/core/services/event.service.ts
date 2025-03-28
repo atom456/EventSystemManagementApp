@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { EventSummary, IEvent } from '../interfaces/IEvent.interface';
+import { IEvent } from '../interfaces/IEvent.interface';
 import { IEventService } from '../abstract/IEventService.interface';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { NotFoundError } from '../errors/not-found-error';
@@ -27,10 +27,6 @@ export class EventService implements IEventService {
           ),
         ),
       );
-  }
-
-  public getEventInfo(id: string): Observable<EventSummary> {
-    throw new Error('Method not implemented.');
   }
 
   private handleHttpError(

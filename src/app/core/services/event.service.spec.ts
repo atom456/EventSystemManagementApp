@@ -53,7 +53,7 @@ describe('EventService', () => {
       },
     });
     // Act
-    const req = httpMock.expectOne('assets/events.json');
+    const req = httpMock.expectOne('assets/data/events.json');
     expect(req.request.method).toBe('GET');
     req.flush(mockEvents);
     // Assert
@@ -71,7 +71,7 @@ describe('EventService', () => {
       },
     });
     // Act
-    const req = httpMock.expectOne('assets/events.json');
+    const req = httpMock.expectOne('assets/data/events.json');
     expect(req.request.method).toBe('GET');
     req.flush(null, {
       status: 404,
@@ -94,7 +94,7 @@ describe('EventService', () => {
       },
     });
     // Act
-    const req = httpMock.expectOne('assets/events.json');
+    const req = httpMock.expectOne('assets/data/events.json');
     expect(req.request.method).toBe('GET');
     req.flush(null, {
       status: 500,
