@@ -1,0 +1,9 @@
+@import "../../../../assets/styles/variables";
+.header {
+  height: 4.5rem;
+  background-color: $color-primary;
+  &__title {
+    font-size: $font-size-xl;
+    color: $color-white;
+  }
+}

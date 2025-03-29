@@ -1,18 +1,22 @@
-<ng-container *ngIf="loading;else content">
-    <app-loader data-testid="loader"></app-loader>
-</ng-container>
-<ng-template #content>
-    <section>
-        <ng-container *ngIf="error; else data">
-            <span data-testid="error">{{error}}</span>
-        </ng-container>
-        <ng-template #data>
-            <ng-container *ngIf="events.length > 0;else noEvents">
-                <app-event-list data-testid="events"></app-event-list>
+<div class="container catalog u-h-full">
+    <ng-container *ngIf="loading;else content">
+        <app-loader data-testid="loader"></app-loader>
+    </ng-container>
+    <ng-template #content>
+        <div class="u-h-full">
+            <ng-container *ngIf="error; else data">
+                <span data-testid="error" class="color-error">{{error}}</span>
             </ng-container>
-            <ng-template #noEvents>
-                <span data-testid="no-events">There are no events to show</span>
+            <ng-template #data>
+                <ng-container *ngIf="events.length > 0;else noEvents">
+                    <section>
+                        <app-event-list [events]="events"></app-event-list>
+                    </section>
+                </ng-container>
+                <ng-template #noEvents>
+                    <span data-testid="no-events">There are no events to show</span>
+                </ng-template>
             </ng-template>
-        </ng-template>
-    </section>
-</ng-template>
+        </div>
+    </ng-template>
+</div>

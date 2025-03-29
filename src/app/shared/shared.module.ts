@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { RouterModule } from '@angular/router';
 
 const components = [
   NotFoundComponent,
@@ -16,7 +17,7 @@ const components = [
 
 @NgModule({
   declarations: [...components],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [...components],
 })
 export class SharedModule {}

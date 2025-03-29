@@ -4,10 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-
+const components = [AppComponent];
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [...components],
   imports: [BrowserModule, AppRoutingModule, CoreModule, SharedModule],
-  bootstrap: [AppComponent],
+  bootstrap: [...components],
 })
 export class AppModule {}

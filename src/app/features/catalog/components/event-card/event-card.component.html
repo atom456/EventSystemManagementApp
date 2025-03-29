@@ -1,1 +1,30 @@
-<p>event-card works!</p>
+<article class="event">
+    <header>
+        <h2 class="event__title" data-testid="event-title">{{event.title}}</h2>
+        <p class="event__subtitle" data-testid="event-subtitle">{{event.subtitle}}</p>
+    </header>
+
+    <img class="event__image" [src]="event.image" [alt]="'Image for ' + event.title" data-testid="event-image" />
+    <section class="event__body">
+        <p class="event__date">
+            <time class="event__date__start" [attr.datetime]="event.startDate" data-testid="event-startDate">
+                {{ event.startDate | date:'dd/MM/yyyy' }}
+            </time> -
+            <time class="event__date__end" [attr.datetime]="event.endDate" data-testid="event-endDate">
+                {{ event.endDate | date:'dd/MM/yyyy' }}
+            </time>
+        </p>
+
+        <p class="event__place">
+            <strong>{{ event.place }}</strong>
+        </p>
+
+        <div class="event__description u-mt-3" [innerHTML]="event.description"></div>
+    </section>
+
+    <footer class="event__action">
+        <a class="btn btn--primary btn--block btn--square" [routerLink]="['/events', event.id]">
+            COMPRAR
+        </a>
+    </footer>
+</article>

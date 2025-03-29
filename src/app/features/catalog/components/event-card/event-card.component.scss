@@ -1,0 +1,46 @@
+@import "../../../../../assets/styles/variables";
+.event {
+  border: 0.1rem solid $color-gray;
+  height: 38em;
+  display: flex;
+  flex-direction: column;
+
+  header {
+    padding: 0.5rem;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+  }
+
+  &__title,
+  &__subtitle {
+    color: $color-primary;
+  }
+
+  &__image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  &__body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    flex: 1;
+    overflow: scroll;
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+  }
+
+  &__action {
+    height: 4rem;
+    flex-shrink: 0;
+    .btn {
+      height: 100%;
+      font-size: $font-size-lg;
+    }
+  }
+}

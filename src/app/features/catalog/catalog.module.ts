@@ -6,8 +6,13 @@ import { EventCardComponent } from './components/event-card/event-card.component
 import { EventListComponent } from './components/event-list/event-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
+const components = [
+  CatalogPageComponent,
+  EventCardComponent,
+  EventListComponent,
+];
 @NgModule({
-  declarations: [CatalogPageComponent, EventCardComponent, EventListComponent],
+  declarations: [...components],
   imports: [CommonModule, CatalogRoutingModule, SharedModule],
 })
 export class CatalogModule {}

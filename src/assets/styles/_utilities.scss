@@ -1,0 +1,134 @@
+$spacings: 0, 0.25rem, 0.5rem, 1rem, 1.5rem, 3rem;
+.container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+section {
+  padding: 1rem 0;
+}
+.color-error {
+  color: $color-error;
+}
+
+.u {
+  &-position-relative {
+    position: relative;
+  }
+  &-position-absolute {
+    position: absolute;
+  }
+  &-w-full {
+    width: 100%;
+  }
+  &-h-full {
+    height: 100%;
+  }
+  &-d-flex {
+    display: flex;
+  }
+
+  &-d-grid {
+    display: grid;
+  }
+
+  &-flex-row {
+    flex-direction: row;
+  }
+
+  &-flex-column {
+    flex-direction: column;
+  }
+
+  &-align-start {
+    align-items: flex-start;
+  }
+
+  &-align-center {
+    align-items: center;
+  }
+
+  &-align-end {
+    align-items: flex-end;
+  }
+
+  &-justify-start {
+    justify-content: flex-start;
+  }
+
+  &-justify-center {
+    justify-content: center;
+  }
+
+  &-justify-end {
+    justify-content: flex-end;
+  }
+
+  &-justify-between {
+    justify-content: space-between;
+  }
+
+  &-justify-around {
+    justify-content: space-around;
+  }
+
+  &-justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  // Margin
+  @for $i from 0 through 5 {
+    &-m-#{$i} {
+      margin: nth($spacings, $i + 1);
+    }
+    &-mt-#{$i} {
+      margin-top: nth($spacings, $i + 1);
+    }
+    &-mb-#{$i} {
+      margin-bottom: nth($spacings, $i + 1);
+    }
+    &-ml-#{$i} {
+      margin-left: nth($spacings, $i + 1);
+    }
+    &-mr-#{$i} {
+      margin-right: nth($spacings, $i + 1);
+    }
+    &-mx-#{$i} {
+      margin-left: nth($spacings, $i + 1);
+      margin-right: nth($spacings, $i + 1);
+    }
+    &-my-#{$i} {
+      margin-top: nth($spacings, $i + 1);
+      margin-bottom: nth($spacings, $i + 1);
+    }
+  }
+
+  // Padding
+  @for $i from 0 through 5 {
+    &-p-#{$i} {
+      padding: nth($spacings, $i + 1);
+    }
+    &-pt-#{$i} {
+      padding-top: nth($spacings, $i + 1);
+    }
+    &-pb-#{$i} {
+      padding-bottom: nth($spacings, $i + 1);
+    }
+    &-pl-#{$i} {
+      padding-left: nth($spacings, $i + 1);
+    }
+    &-pr-#{$i} {
+      padding-right: nth($spacings, $i + 1);
+    }
+    &-px-#{$i} {
+      padding-left: nth($spacings, $i + 1);
+      padding-right: nth($spacings, $i + 1);
+    }
+    &-py-#{$i} {
+      padding-top: nth($spacings, $i + 1);
+      padding-bottom: nth($spacings, $i + 1);
+    }
+  }
+}
