@@ -5,7 +5,7 @@ export const CONSTANTS = {
       UNEXPECTED: 'Internal Server Error',
     },
     UI: {
-      EVENT_NOT_FOUND: 'The event you are looking for does not exist.',
+      EVENT_NOT_FOUND: 'Event info not found.',
       FAILED_TO_LOAD_EVENTS: 'Failed to load events. Please try again later.',
       FAILED_TO_LOAD_EVENT: 'Failed to load event. Please try again later.',
     },

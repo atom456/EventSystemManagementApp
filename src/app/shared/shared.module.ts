@@ -6,6 +6,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { RouterModule } from '@angular/router';
+import { OrderByDateAscPipe } from './pipes/order-by-date-asc.pipe';
 
 const components = [
   NotFoundComponent,
@@ -13,6 +14,7 @@ const components = [
   FooterComponent,
   ShoppingCartComponent,
   LoaderComponent,
+  OrderByDateAscPipe,
 ];
 
 @NgModule({

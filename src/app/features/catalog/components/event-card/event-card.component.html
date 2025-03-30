@@ -1,10 +1,14 @@
 <article class="event">
-    <header>
-        <h2 class="event__title" data-testid="event-title">{{event.title}}</h2>
-        <p class="event__subtitle" data-testid="event-subtitle">{{event.subtitle}}</p>
-    </header>
+    <a [routerLink]="['/events',event.id]">
+        <header>
+            <h2 class="event__title" data-testid="event-title">{{event.title}}</h2>
+            <p class="event__subtitle" data-testid="event-subtitle">{{event.subtitle}}</p>
+        </header>
+    </a>
 
-    <img class="event__image" [src]="event.image" [alt]="'Image for ' + event.title" data-testid="event-image" />
+    <a [routerLink]="['/events',event.id]">
+        <img class="event__image" [src]="event.image" [alt]="'Image for ' + event.title" data-testid="event-image" />
+    </a>
     <section class="event__body">
         <p class="event__date">
             <time class="event__date__start" [attr.datetime]="event.startDate" data-testid="event-startDate">

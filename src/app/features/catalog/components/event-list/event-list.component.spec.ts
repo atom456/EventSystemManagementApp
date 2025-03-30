@@ -4,8 +4,9 @@ import { EventListComponent } from './event-list.component';
 import { IEvent } from 'src/app/core/interfaces/IEvent.interface';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { MockComponent } from 'ng-mocks';
+import { MockComponent, MockPipe } from 'ng-mocks';
 import { EventCardComponent } from '../event-card/event-card.component';
+import { OrderByDateAscPipe } from 'src/app/shared/pipes/order-by-date-asc.pipe';
 
 describe('EventListComponent', () => {
   let component: EventListComponent;
@@ -35,9 +36,9 @@ describe('EventListComponent', () => {
   ];
   beforeEach(waitForAsync(() => {
     const mockedComponents = [MockComponent(EventCardComponent)];
-
+    const mockedPipes = [MockPipe(OrderByDateAscPipe, (value) => value)];
     TestBed.configureTestingModule({
-      declarations: [EventListComponent, ...mockedComponents],
+      declarations: [EventListComponent, ...mockedComponents, ...mockedPipes],
     }).compileComponents();
 
     fixture = TestBed.createComponent(EventListComponent);
@@ -59,6 +60,7 @@ describe('EventListComponent', () => {
 
   it('should render list items for each event', () => {
     component.events = mockEvents;
+    console.log(component.events);
     fixture.detectChanges();
     const events = el.queryAll(By.css('[data-testid="event"]'));
     expect(events.length).toBe(mockEvents.length);

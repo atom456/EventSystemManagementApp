@@ -1,6 +1,6 @@
 <div class="u-d-grid">
     <ul class="events-list">
-        <li *ngFor="let event of events" data-testid="event">
+        <li *ngFor="let event of events | orderByDateAsc:'ASC'" data-testid="event">
             <app-event-card [event]="event"></app-event-card>
         </li>
     </ul>

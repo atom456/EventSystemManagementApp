@@ -1,7 +1,6 @@
 @import "../../../../../assets/styles/variables";
 .event {
   border: 0.1rem solid $color-gray;
-  height: 38em;
   display: flex;
   flex-direction: column;
 
@@ -33,6 +32,7 @@
 
   &__description {
     font-size: $font-size-lg;
+    display: none;
   }
 
   &__action {
@@ -41,6 +41,12 @@
     .btn {
       height: 100%;
       font-size: $font-size-lg;
+    }
+  }
+  @media (min-width: 640px) {
+    height: 38rem;
+    &__description {
+      display: block;
     }
   }
 }
