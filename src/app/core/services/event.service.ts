@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, catchError, throwError } from 'rxjs';
-import { IEvent } from '../interfaces/IEvent.interface';
-import { IEventService } from '../abstract/IEventService.interface';
+import { Observable, catchError, map, throwError } from 'rxjs';
+import { IEvent, IEventSummary } from '../interfaces/IEvent.interface';
+import { IEventService } from '../abstracts/IEventService.interface';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { NotFoundError } from '../errors/not-found-error';
 import { CONSTANTS } from '../constants/constants';
@@ -29,15 +29,34 @@ export class EventService implements IEventService {
       );
   }
 
+  public getEventById(id: string): Observable<IEventSummary> {
+    return this._httpClient
+      .get<{ event: IEventSummary }>(`${this.baseUrl}/event-info-${id}.json`)
+      .pipe(
+        map((event) => event.event),
+        catchError((error: HttpErrorResponse) =>
+          this.handleHttpError(
+            error,
+            CONSTANTS.ERROR_MESSAGES.UI.EVENT_NOT_FOUND,
+            CONSTANTS.ERROR_MESSAGES.UI.FAILED_TO_LOAD_EVENT,
+          ),
+        ),
+      );
+  }
+
   private handleHttpError(
     error: HttpErrorResponse,
     uiErrorMessage: string,
+    uiUnexpected: string = CONSTANTS.ERROR_MESSAGES.UNEXPECTED,
   ): Observable<never> {
     if (error.status === 404) {
       return throwError(() => new NotFoundError(uiErrorMessage));
     }
     return throwError(
-      () => new UnexpectedError(CONSTANTS.ERROR_MESSAGES.UNEXPECTED),
+      () =>
+        new UnexpectedError(
+          uiUnexpected ?? CONSTANTS.ERROR_MESSAGES.UNEXPECTED,
+        ),
     );
   }
 }

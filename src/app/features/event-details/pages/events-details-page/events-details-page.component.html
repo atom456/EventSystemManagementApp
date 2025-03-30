@@ -1,1 +1,19 @@
-<p>events-details-page works!</p>
+<div class="container u-h-full">
+    <ng-container *ngIf="loading;else content">
+        <app-loader data-testid="loader"></app-loader>
+    </ng-container>
+    <ng-template #content>
+        <div class="u-h-full">
+            <ng-container *ngIf="error; else data">
+                <span data-testid="error" class="color-error">{{error}}</span>
+            </ng-container>
+            <ng-template #data>
+                <section *ngIf="event">
+                    {{event.title}}
+                    {{event.subtitle}}
+                </section>
+            </ng-template>
+        </div>
+    </ng-template>
+
+</div>

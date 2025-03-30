@@ -8,6 +8,6 @@ const components = [AppComponent];
 @NgModule({
   declarations: [...components],
   imports: [BrowserModule, AppRoutingModule, CoreModule, SharedModule],
-  bootstrap: [...components],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -3,7 +3,6 @@ import { EventCardComponent } from './event-card.component';
 import { IEvent } from 'src/app/core/interfaces/IEvent.interface';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { MockComponent } from 'ng-mocks';
 import { CommonModule, DatePipe } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 

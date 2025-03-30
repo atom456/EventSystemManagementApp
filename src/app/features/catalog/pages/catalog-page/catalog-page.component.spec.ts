@@ -7,7 +7,7 @@ import {
 } from '@angular/core/testing';
 
 import { CatalogPageComponent } from './catalog-page.component';
-import { IEventService } from 'src/app/core/abstract/IEventService.interface';
+import { IEventService } from 'src/app/core/abstracts/IEventService.interface';
 import { EVENTS_SERVICE_TOKEN } from 'src/app/core/tokens/event-api.token';
 import { delay, of, throwError } from 'rxjs';
 import { IEvent } from 'src/app/core/interfaces/IEvent.interface';

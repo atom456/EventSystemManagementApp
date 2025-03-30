@@ -9,4 +9,4 @@ export interface IEvent {
   description: string;
 }
 
-export type EventSummary = Pick<IEvent, 'id' | 'title' | 'subtitle' | 'image'>;
+export type IEventSummary = Pick<IEvent, 'id' | 'title' | 'subtitle' | 'image'>;
