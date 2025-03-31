@@ -1,5 +1,4 @@
 <div>
-    <!-- Si hay elementos en el carrito, muestro las entradas -->
     <ng-container *ngIf="(cartState | keyvalue).length > 0; else noTickets">
         <section *ngFor="let entry of cartState | keyvalue" class="cart__event text-center">
             <h3 class="cart__event-title">{{ entry.value.title }}</h3>
@@ -16,8 +15,6 @@
             </ul>
         </section>
     </ng-container>
-
-    <!-- Si no hay entradas, muestro el mensaje -->
     <ng-template #noTickets>
         <section>
             <p class="text-center">No tickets selected.</p>
