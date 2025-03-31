@@ -1,0 +1,12 @@
+$width: 480px;
+$height: 48px;
+
+.loader {
+  position: fixed;
+  inset: 0;
+  place-items: center;
+  img {
+    width: $width;
+    height: $height;
+  }
+}

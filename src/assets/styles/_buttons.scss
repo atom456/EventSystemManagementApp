@@ -1,0 +1,122 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: $radius-md;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  &--block {
+    display: flex;
+    width: 100%;
+  }
+
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border 0.2s ease;
+
+  background: none;
+  color: inherit;
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background-color: darken($color-primary, 10%);
+    }
+
+    &:active {
+      background-color: darken($color-primary, 15%);
+    }
+
+    &:disabled {
+      background-color: $color-gray;
+      cursor: not-allowed;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-secondary;
+    color: $color-white;
+
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+    }
+
+    &:active {
+      background-color: darken($color-secondary, 15%);
+    }
+
+    &:disabled {
+      background-color: $color-gray;
+      cursor: not-allowed;
+    }
+  }
+
+  &--accent {
+    background-color: $color-accent;
+    color: $color-black;
+
+    &:hover {
+      background-color: darken($color-accent, 10%);
+    }
+
+    &:active {
+      background-color: darken($color-accent, 15%);
+    }
+
+    &:disabled {
+      background-color: $color-gray;
+      cursor: not-allowed;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid $color-primary;
+    color: $color-primary;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+
+    &:active {
+      background-color: darken($color-primary, 10%);
+    }
+
+    &:disabled {
+      border-color: $color-gray;
+      color: $color-gray;
+      cursor: not-allowed;
+    }
+  }
+
+  &--sm {
+    padding: 0.25rem 0.75rem;
+    font-size: $font-size-sm;
+  }
+
+  &--lg {
+    padding: 0.75rem 1.5rem;
+    font-size: $font-size-lg;
+  }
+
+  &--rounded {
+    border-radius: $radius-lg;
+  }
+
+  &--square {
+    border-radius: 0;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}

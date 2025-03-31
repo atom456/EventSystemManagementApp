@@ -1,0 +1,16 @@
+@import "../assets/styles/variables";
+.app {
+  grid-template-rows: auto 1fr auto;
+  &__header {
+    grid-row: 1;
+  }
+  &__main {
+    grid-row: 2;
+    background-color: $color-gray-light;
+    overflow-y: auto;
+    position: relative;
+  }
+  &__footer {
+    grid-row: 3;
+  }
+}
