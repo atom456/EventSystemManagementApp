@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { EventCardComponent } from './event-card.component';
-import { IEvent } from 'src/app/core/interfaces/IEvent.interface';
+import { IEvent } from 'src/app/core/interfaces/event/IEvent.interface';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { CommonModule, DatePipe } from '@angular/common';

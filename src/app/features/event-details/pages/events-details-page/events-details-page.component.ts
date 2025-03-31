@@ -1,11 +1,10 @@
 import { Component, DestroyRef, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { IEventSummary } from 'src/app/core/interfaces/IEvent.interface';
 import { EVENTS_SERVICE_TOKEN } from 'src/app/core/tokens/event-api.token';
 import { IEventService } from 'src/app/core/abstracts/IEventService.interface';
 import { catchError, filter, finalize, map, of, switchMap, tap } from 'rxjs';
-import { IEventDetail } from 'src/app/core/interfaces/IEventDetail.interface';
+import { IEventDetail } from 'src/app/core/interfaces/event/IEventDetail.interface';
 
 @Component({
   selector: 'app-events-details-page',

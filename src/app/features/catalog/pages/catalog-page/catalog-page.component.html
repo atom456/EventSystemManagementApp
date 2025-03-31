@@ -5,7 +5,9 @@
     <ng-template #content>
         <div class="u-h-full">
             <ng-container *ngIf="error; else data">
-                <span data-testid="error" class="color-error">{{error}}</span>
+                <div class="catalog__error">
+                    <span data-testid="error" class="color-error">{{error}}</span>
+                </div>
             </ng-container>
             <ng-template #data>
                 <ng-container *ngIf="events.length > 0;else noEvents">

@@ -78,7 +78,6 @@ section {
     justify-content: space-evenly;
   }
 
-  // Margin
   @for $i from 0 through 5 {
     &-m-#{$i} {
       margin: nth($spacings, $i + 1);

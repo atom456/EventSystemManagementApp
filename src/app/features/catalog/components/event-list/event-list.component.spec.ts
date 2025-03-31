@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { EventListComponent } from './event-list.component';
-import { IEvent } from 'src/app/core/interfaces/IEvent.interface';
+import { IEvent } from 'src/app/core/interfaces/event/IEvent.interface';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { MockComponent, MockPipe } from 'ng-mocks';

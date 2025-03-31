@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
-import { IEventSummary, IEvent } from '../interfaces/IEvent.interface';
-import { IEventDetail } from '../interfaces/IEventDetail.interface';
+import { IEvent } from '../interfaces/event/IEvent.interface';
+import { IEventDetail } from '../interfaces/event/IEventDetail.interface';
 
 export interface IEventService {
   /**

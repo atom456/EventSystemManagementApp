@@ -10,7 +10,7 @@ import { CatalogPageComponent } from './catalog-page.component';
 import { IEventService } from 'src/app/core/abstracts/IEventService.interface';
 import { EVENTS_SERVICE_TOKEN } from 'src/app/core/tokens/event-api.token';
 import { delay, of, throwError } from 'rxjs';
-import { IEvent } from 'src/app/core/interfaces/IEvent.interface';
+import { IEvent } from 'src/app/core/interfaces/event/IEvent.interface';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { NotFoundError } from 'src/app/core/errors/not-found-error';

@@ -100,7 +100,6 @@
     }
   }
 
-  // Tamaños
   &--sm {
     padding: 0.25rem 0.75rem;
     font-size: $font-size-sm;
@@ -111,7 +110,6 @@
     font-size: $font-size-lg;
   }
 
-  // Bordes
   &--rounded {
     border-radius: $radius-lg;
   }
@@ -120,7 +118,6 @@
     border-radius: 0;
   }
 
-  // Estados comunes
   &:disabled {
     opacity: 0.6;
     pointer-events: none;

@@ -3,10 +3,17 @@
         <app-loader data-testid="loader"></app-loader>
     </ng-container>
     <ng-template #content>
-        <div class="events__detail__content u-d-grid u-h-full">
+        <a class="btn btn--primary u-my-3" [routerLink]="['/catalog']">← Back</a>
+        <div class="events__detail__content u-d-grid">
             <div>
-                <h2 class="sessions__title u-my-5" style="text-align: center;">Sesiones disponibles</h2>
-                <app-session-list [eventSessions]="event?.sessions || []" [error]="error"></app-session-list>
+                <h2 class="text-center u-my-5">Sesiones disponibles</h2>
+                <app-session-list [eventSessions]="event?.sessions || []" [error]="error"
+                    [eventId]="event?.event?.id || ''" [eventTitle]="event?.event?.title || ''"></app-session-list>
+
+            </div>
+            <div>
+                <h2 class="text-center u-my-5">Tickets seleccionados</h2>
+                <app-shopping-cart></app-shopping-cart>
             </div>
         </div>
     </ng-template>

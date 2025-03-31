@@ -5,7 +5,7 @@ import {
 } from '@angular/common/http/testing';
 
 import { EventService } from './event.service';
-import { IEvent } from '../interfaces/IEvent.interface';
+import { IEvent } from '../interfaces/event/IEvent.interface';
 import { NotFoundError } from '../errors/not-found-error';
 import { CONSTANTS } from '../constants/constants';
 import { UnexpectedError } from '../errors/unexpected-error';

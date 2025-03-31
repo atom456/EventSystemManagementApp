@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { catchError, finalize, of, take, tap } from 'rxjs';
 import { IEventService } from 'src/app/core/abstracts/IEventService.interface';
-import { IEvent } from 'src/app/core/interfaces/IEvent.interface';
+import { IEvent } from 'src/app/core/interfaces/event/IEvent.interface';
 import { EVENTS_SERVICE_TOKEN } from 'src/app/core/tokens/event-api.token';
 
 @Component({
