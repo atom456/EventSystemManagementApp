@@ -1,0 +1,14 @@
+<div class="sessions__list" style="border: 1px solid gray;">
+    <ng-container *ngIf="error;else data">
+        <div class="sessions__list__error">
+            <span class="color-error">{{error}}</span>
+        </div>
+    </ng-container>
+    <ng-template #data>
+        <ul class="u-p-3 sessions__list__items">
+            <li *ngFor="let session of eventSessions | orderByDateAsc : 'date' : 'ASC'">
+                <app-session-list-item [session]="session"></app-session-list-item>
+            </li>
+        </ul>
+    </ng-template>
+</div>

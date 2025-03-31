@@ -1,0 +1,14 @@
+<article class="session__item u-my-2">
+    <p class="session__info">
+        <span><strong>Fecha: {{ session.date | date:'dd/MM/yyyy' }}</strong></span>&nbsp;
+        <span>Disponibilidad: {{ session.availability }}</span>
+    </p>
+
+    <div class="session__actions">
+        <button (click)="plus()" class="btn btn--primary" type="button" role="button"
+            aria-label="Aumentar entradas">+</button>
+        <span class="session__counter">{{ counter }}</span>
+        <button (click)="minus()" class="btn btn--primary" type="button" role="button"
+            aria-label="Disminuir entradas">-</button>
+    </div>
+</article>

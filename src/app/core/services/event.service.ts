@@ -7,6 +7,7 @@ import { NotFoundError } from '../errors/not-found-error';
 import { CONSTANTS } from '../constants/constants';
 import { UnexpectedError } from '../errors/unexpected-error';
 import { environment } from 'src/environments/environment';
+import { IEventDetail } from '../interfaces/IEventDetail.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -29,11 +30,10 @@ export class EventService implements IEventService {
       );
   }
 
-  public getEventById(id: string): Observable<IEventSummary> {
+  public getEventById(id: string): Observable<IEventDetail> {
     return this._httpClient
-      .get<{ event: IEventSummary }>(`${this.baseUrl}/event-info-${id}.json`)
+      .get<IEventDetail>(`${this.baseUrl}/event-info-${id}.json`)
       .pipe(
-        map((event) => event.event),
         catchError((error: HttpErrorResponse) =>
           this.handleHttpError(
             error,

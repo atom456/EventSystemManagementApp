@@ -1,18 +1,13 @@
-<div class="container u-h-full">
+<div class="container events__detail u-h-full">
     <ng-container *ngIf="loading;else content">
         <app-loader data-testid="loader"></app-loader>
     </ng-container>
     <ng-template #content>
-        <div class="u-h-full">
-            <ng-container *ngIf="error; else data">
-                <span data-testid="error" class="color-error">{{error}}</span>
-            </ng-container>
-            <ng-template #data>
-                <section *ngIf="event">
-                    {{event.title}}
-                    {{event.subtitle}}
-                </section>
-            </ng-template>
+        <div class="events__detail__content u-d-grid u-h-full">
+            <div>
+                <h2 class="sessions__title u-my-5" style="text-align: center;">Sesiones disponibles</h2>
+                <app-session-list [eventSessions]="event?.sessions || []" [error]="error"></app-session-list>
+            </div>
         </div>
     </ng-template>
 
